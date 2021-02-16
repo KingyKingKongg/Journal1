@@ -17,11 +17,11 @@ while True:
     if person == "1": #Create New User
         name = input("Enter your First and Last name: ")
         create = input("Please create a username: ")
-        path = "/home/covid2020/Desktop/Users/" + create + ".txt"
-        #looks for user name.txt, if one matches, will return with "user already exists." otherwise, file will be created, see below
+        path = os.getcwd() + "/" + create + ".docx"
+        #looks for user name.docx, if one matches, will return with "user already exists." otherwise, file will be created, see below
         while os.path.exists(path):
             create = input("Username already exists.\nPlease enter new Username: ")
-            path = "/home/covid2020/Desktop/Users/" + create + ".txt"
+            path = os.getcwd() + "/" + create + ".docx"
         
         
         while True:
@@ -63,8 +63,8 @@ while True:
 
     if person == "2": #returning user
         user = input("\nEnter your Username(case sensitive): ")
-        path = "/home/covid2020/Desktop/Users/" + user + ".txt" 
-        if os.path.exists(path): #checks for if user.txt exists
+        path = os.getcwd() + "/" + user + ".docx" 
+        if os.path.exists(path): #checks for if user.docx exists
  
             t = 0
             while t < 3: #if wrong password, will ask 3 times until fail
